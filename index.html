@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro Serviço de Campo</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#c57b62">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- MENU -->
+    <section id="menu" class="screen">
+      <div class="menu-wrap">
+        <button class="menu-btn" data-target="horas">HORAS</button>
+        <button class="menu-btn" data-target="revisitas">REVISITAS</button>
+        <button class="menu-btn" data-target="estudos">ESTUDOS</button>
+      </div>
+    </section>
+
+    <!-- HORAS -->
+    <section id="horas" class="screen hidden">
+      <header class="header">
+        <button class="back" data-target="menu">←</button>
+        <h2>Registrar Horas</h2>
+      </header>
+
+      <div class="content">
+        <label class="label">Digite as horas (HH:MM)</label>
+        <input id="horaInput" type="time" step="60" value="01:00">
+        <button id="addHora" class="btn">Add</button>
+
+        <ul id="horaList" class="list"></ul>
+
+        <div class="row-spaced">
+          <button id="totalHoras" class="btn small">TOTAL</button>
+          <button id="limparHoras" class="btn small danger">LIMPAR</button>
+        </div>
+
+        <div id="totalDisplay" class="total-display">Total: 0:00</div>
+      </div>
+    </section>
+
+    <!-- REVISITAS -->
+    <section id="revisitas" class="screen hidden">
+      <header class="header">
+        <button class="back" data-target="menu">←</button>
+        <h2>Revisitas</h2>
+      </header>
+
+      <div class="content">
+        <input id="revNome" placeholder="nome" maxlength="100">
+        <textarea id="revTexto" placeholder="Texto até 700 caracteres" maxlength="700" rows="8"></textarea>
+        <div class="row-spaced">
+          <button id="addRev" class="btn">Salvar</button>
+          <button id="clearRevAll" class="btn small danger">Limpar tudo</button>
+        </div>
+
+        <ul id="revList" class="list"></ul>
+      </div>
+    </section>
+
+    <!-- ESTUDOS -->
+    <section id="estudos" class="screen hidden">
+      <header class="header">
+        <button class="back" data-target="menu">←</button>
+        <h2>Estudos Bíblicos</h2>
+      </header>
+
+      <div class="content">
+        <div class="row-spaced">
+          <button id="newEstudo" class="btn">Novo Estudo</button>
+          <button id="clearEstAll" class="btn small danger">Limpar tudo</button>
+        </div>
+
+        <div id="estEditor" class="editor hidden">
+          <input id="estNome" placeholder="nome" maxlength="100">
+          <textarea id="estTexto" placeholder="Texto até 700 caracteres" maxlength="700" rows="8"></textarea>
+          <div class="row-spaced">
+            <button id="saveEst" class="btn">Salvar</button>
+            <button id="cancelEst" class="btn small">Cancelar</button>
+          </div>
+        </div>
+
+        <ul id="estList" class="list"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
